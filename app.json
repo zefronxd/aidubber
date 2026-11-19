@@ -1,0 +1,38 @@
+{
+  "name": "ai-video-dubber",
+  "description": "Video -> Hindi/English dubbed video (Whisper + Google Translate + Edge TTS)",
+  "env": {
+    "GROQ_API_KEY": {
+      "description": "1-2 GB / lambe video ke liye ZAROORI. Khali chhodo to sirf 15 min tak ke video (local Whisper).",
+      "required": false
+    },
+    "WHISPER_MODEL": {
+      "description": "Bina key ke model: tiny / base / small",
+      "value": "base",
+      "required": false
+    },
+    "MAX_MB": {
+      "value": "2500",
+      "required": false
+    },
+    "MAX_MIN": {
+      "value": "180",
+      "required": false
+    },
+    "ACCESS_CODE": {
+      "description": "Optional password. Set karo to sirf wahi log use kar sakenge jinke paas code hai.",
+      "required": false
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "basic"
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ]
+}
